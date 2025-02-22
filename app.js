@@ -61,3 +61,17 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    dropdownToggle.addEventListener("click", function(event) {
+        event.stopPropagation();
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function() {
+        dropdownContent.style.display = "none";
+    });
+});
